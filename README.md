@@ -23,8 +23,11 @@ Cross-Platform: Built with Python and pywebview, providing a native feel.
 
 
 Technology Stack
+
 Engine: llama.cpp (via llama-cpp-python) for high-performance GGUF inference.
+
 UI Framework: pywebview with a clean, glass-morphism aesthetic.
+
 Transcription: faster-whisper for efficient, local audio processing.
 
 

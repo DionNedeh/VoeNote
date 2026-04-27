@@ -1,5 +1,8 @@
 # VoeNote
 
+A local AI intelligence worksuite. 
+
+
 ![vn1](./assets/vn1.png)
 ![vn2](./assets/vn2.png)
 ![vn3](./assets/vn3.png)

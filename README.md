@@ -5,6 +5,10 @@ A local AI intelligence worksuite.
 
 VoeNote Desktop is a local-first, privacy-focused AI productivity suite. It allows you to run powerful Large Language Models (LLMs) directly on your machine without data ever leaving your system. Designed for professionals, it integrates advanced document analysis, intelligent code assistance, and a structured "Pro-Comm" workspace for drafting and refinement.
 
+
+
+
+
 Key Features
 
 100% Offline: No cloud dependencies. Your notes, documents, and code remain private on your machine.
@@ -22,6 +26,12 @@ Shared Context: Toggleable state allows the AI to reference your work across dif
 Cross-Platform: Built with Python and pywebview, providing a native feel.
 
 
+
+
+
+
+
+
 Technology Stack
 
 Engine: llama.cpp (via llama-cpp-python) for high-performance GGUF inference.
@@ -29,6 +39,14 @@ Engine: llama.cpp (via llama-cpp-python) for high-performance GGUF inference.
 UI Framework: pywebview with a clean, glass-morphism aesthetic.
 
 Transcription: faster-whisper for efficient, local audio processing.
+
+
+
+
+
+
+
+
 
 
 Quick Start
@@ -46,6 +64,21 @@ pip install -r requirements.txt
 Run the application:
 
 python main.py
+
+
+🚧 Known Issues & Active Development
+
+Thinking Models: Currently, VoeNote supports models that include "thinking" processes (e.g., Qwen3.5-9b or similar reasoning models). However, the engine does not yet fully filter out the <think> blocks. You may see the raw chain-of-thought process in your chat history.
+
+I am actively working on:
+
+Dynamic Filtering: Implementing a toggle in the settings to strip <think> tags from the final UI output.
+
+Model Detection: Automatically identifying reasoning models to improve the user experience for "thought-heavy" outputs.
+
+Reasoning Button: Actively developing a "Disable Thinking" toggle.
+
+
 
 Usage Notes
 

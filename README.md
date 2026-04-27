@@ -28,7 +28,7 @@ Clone the repository:
 
 git clone https://github.com/DionNedeh/VoeNote.git
 
-cd voenote-desktop
+cd VoeNote
 
 Install dependencies:
 

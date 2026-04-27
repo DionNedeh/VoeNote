@@ -11,7 +11,7 @@ Key Features
 
 Pro-Comm Workspace: A distraction-free notepad with built-in AI personas (Resume Helper, Grammar/Rewrite, Bullet List Maker, Translator, and more).
 
-Document Intelligence: Chat with your local TXT or DOCX files using RAG (Retrieval-Augmented Generation) technology.
+Document Intelligence: Chat with your local TXT files using RAG (Retrieval-Augmented Generation) technology.
 
 Expert Code Tutor: Specialized context for programming tasks and code debugging.
 

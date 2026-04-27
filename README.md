@@ -66,7 +66,7 @@ Run the application:
 python main.py
 
 
-🚧 Known Issues & Active Development
+Known Issues & Active Development
 
 Thinking Models: Currently, VoeNote supports models that include "thinking" processes (e.g., Qwen3.5-9b or similar reasoning models). However, the engine does not yet fully filter out the <think> blocks. You may see the raw chain-of-thought process in your chat history.
 

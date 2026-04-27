@@ -82,7 +82,7 @@ Reasoning Button: Actively developing a "Disable Thinking" toggle.
 
 Usage Notes
 
-Model Compatibility: VoeNote supports any .gguf model. For the best balance of speed and intelligence, we recommend using Llama-3-8B or Mistral-7B models.
+Model Compatibility: VoeNote supports any .gguf model. For the best balance of speed and intelligence, we recommend using gemma-4-E4B-it.
 Settings: Upon launch, head to the Settings modal to link your downloaded GGUF model and configure your GPU layers for hardware acceleration.
 
 Privacy Policy

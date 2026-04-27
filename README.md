@@ -8,11 +8,17 @@ VoeNote Desktop is a local-first, privacy-focused AI productivity suite. It allo
 Key Features
 
 100% Offline: No cloud dependencies. Your notes, documents, and code remain private on your machine.
+
 Pro-Comm Workspace: A distraction-free notepad with built-in AI personas (Resume Helper, Grammar/Rewrite, Bullet List Maker, Translator, and more).
+
 Document Intelligence: Chat with your local TXT or DOCX files using RAG (Retrieval-Augmented Generation) technology.
+
 Expert Code Tutor: Specialized context for programming tasks and code debugging.
+
 Voice Input: Built-in speech-to-text integration for hands-free drafting.
+
 Shared Context: Toggleable state allows the AI to reference your work across different suites seamlessly.
+
 Cross-Platform: Built with Python and pywebview, providing a native feel.
 
 

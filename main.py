@@ -31,7 +31,7 @@ def main():
     api.set_window(window)
     
     # Start app
-    webview.start(debug=True)
+    webview.start(debug=False)
 
 if __name__ == '__main__':
     main()

@@ -1,4 +1,4 @@
-# VoeNote
+# VoeNote v1.0
 
 A local AI intelligence worksuite. 
 

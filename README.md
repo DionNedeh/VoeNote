@@ -26,7 +26,8 @@ Quick Start
 
 Clone the repository:
 
-git clone https://github.com/yourusername/voenote-desktop.git
+git clone https://github.com/DionNedeh/VoeNote.git
+
 cd voenote-desktop
 
 Install dependencies:

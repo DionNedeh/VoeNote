@@ -66,17 +66,7 @@ Run the application:
 python main.py
 
 
-Known Issues & Active Development
 
-Thinking Models: Currently, VoeNote supports models that include "thinking" processes (e.g., Qwen3.5-9b or similar reasoning models). However, the engine does not yet fully filter out the <think> blocks. You may see the raw chain-of-thought process in your chat history.
-
-I am actively working on:
-
-Dynamic Filtering: Implementing a toggle in the settings to strip <think> tags from the final UI output.
-
-Model Detection: Automatically identifying reasoning models to improve the user experience for "thought-heavy" outputs.
-
-Reasoning Button: Actively developing a "Disable Thinking" toggle.
 
 
 

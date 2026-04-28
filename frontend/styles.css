@@ -183,6 +183,13 @@ body {
     background: rgba(255,255,255,0.1);
 }
 
+.action-btn.active {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+    color: var(--accent-color) !important;
+}
+
 .primary-btn {
     background: var(--accent-color);
     color: white;

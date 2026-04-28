@@ -5,6 +5,7 @@ const viewTitle = document.getElementById('view-title');
 const voiceBtn = document.getElementById('voice-btn');
 const engineToggleBtn = document.getElementById('engine-toggle-btn');
 const sharedCtxBtn = document.getElementById('shared-ctx-btn');
+const thinkingToggleBtn = document.getElementById('thinking-toggle-btn');
 const engineIndicator = document.getElementById('engine-indicator');
 const engineStatusText = document.getElementById('engine-status-text');
 
@@ -19,6 +20,7 @@ const btnSaveSettings = document.getElementById('btn-save-settings');
 let engineOnline = false;
 let isRecording = false;
 let activeView = 'procomm';
+let thinkingEnabled = true;
 
 // PyWebView API Reference (will be injected by Python)
 let api = null;
@@ -26,6 +28,27 @@ let api = null;
 window.addEventListener('pywebviewready', () => {
     api = window.pywebview.api;
     console.log("PyWebView API is ready.");
+    
+    // Initialize thinking toggle state
+    api.get_thinking_enabled().then(enabled => {
+        thinkingEnabled = enabled;
+        updateThinkingToggleUI();
+    });
+    
+    // Initialize show-thinking setting (persisted)
+    if(api.get_show_thinking) {
+        api.get_show_thinking().then(show => {
+            const select = document.getElementById('setting-show-thinking');
+            if(select) select.value = show ? 'true' : 'false';
+            try { localStorage.setItem('setting-show-thinking', show ? 'true' : 'false'); } catch(e) {}
+        }).catch(e => console.warn('get_show_thinking failed', e));
+    } else {
+        const stored = localStorage.getItem('setting-show-thinking');
+        if(stored) {
+            const select = document.getElementById('setting-show-thinking');
+            if(select) select.value = stored;
+        }
+    }
 });
 
 // View Switching
@@ -43,6 +66,32 @@ navItems.forEach(item => {
     });
 });
 
+// Thinking Toggle
+function updateThinkingToggleUI() {
+    if(thinkingEnabled) {
+        thinkingToggleBtn.classList.add('active');
+        thinkingToggleBtn.classList.remove('disabled');
+        thinkingToggleBtn.style.color = '#3b82f6';
+    } else {
+        thinkingToggleBtn.classList.remove('active');
+        thinkingToggleBtn.classList.add('disabled');
+        thinkingToggleBtn.style.color = '';
+    }
+}
+
+thinkingToggleBtn.addEventListener('click', async () => {
+    if(!api) return;
+    thinkingEnabled = !thinkingEnabled;
+    thinkingToggleBtn.disabled = true;
+    try {
+        await api.toggle_thinking(thinkingEnabled);
+    } catch(e) {
+        console.warn('toggle_thinking failed', e);
+    }
+    thinkingToggleBtn.disabled = false;
+    updateThinkingToggleUI();
+});
+
 // Settings Modal Handlers
 openSettingsBtn.addEventListener('click', () => settingsModal.classList.add('active'));
 closeSettingsBtn.addEventListener('click', () => settingsModal.classList.remove('active'));
@@ -58,6 +107,7 @@ btnSaveSettings.addEventListener('click', async () => {
     const path = document.getElementById('setting-model-path').value;
     const ctx = parseInt(document.getElementById('setting-n-ctx').value);
     const gpu = parseInt(document.getElementById('setting-n-gpu').value);
+    const showThinking = document.getElementById('setting-show-thinking').value === 'true';
     
     if(!path) {
         alert("Please select a model path.");
@@ -70,6 +120,12 @@ btnSaveSettings.addEventListener('click', async () => {
     engineToggleBtn.disabled = true;
     
     if(api) {
+        try {
+            await api.set_show_thinking(showThinking);
+            try { localStorage.setItem('setting-show-thinking', showThinking ? 'true' : 'false'); } catch(e) {}
+        } catch(e) {
+            console.warn('set_show_thinking failed', e);
+        }
         const success = await api.load_model(path, ctx, gpu);
         if(success) {
             setEngineStatus('online', 'Engine Online');

@@ -81,6 +81,8 @@ Privacy Policy:
 
 VoeNote Desktop processes all data locally. We do not collect telemetry, chat logs, or user data. Your privacy is guaranteed by design.
 
+*Note: If you prefer the installable complete program version you can get it here: https://voelori.gumroad.com/l/ozysuz 
+
 Screenshots
 
 ![vn1](./assets/vn9.png)

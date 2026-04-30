@@ -21,18 +21,9 @@ Expert Code Tutor: Specialized context for programming tasks and code debugging.
 
 Voice Input: Built-in speech-to-text integration for hands-free drafting.
 
-Shared Context: Toggleable state allows the AI to reference your work across different suites seamlessly.
-  Example: Working on your resume? 
-    Upload it in 'Document Intelligence'. Then go to the 'Pro-Comm Suite', make certain your 'Persona:' is set to 'Resume Helper' and send the 'AI Assistant' a message to request for whatever you need help with! 
+Unlike other tools that treat every interaction as an isolated session, VoeNote allows you to toggle shared memory. This enables the AI Assistant to reference your work from your workspace seamlessly.
 
 Cross-Platform: Built with Python and pywebview, providing a native feel.
-
-
-
-
-
-
-
 
 Technology Stack
 
